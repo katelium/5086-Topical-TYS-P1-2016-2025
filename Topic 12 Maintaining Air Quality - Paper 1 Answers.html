@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 12 Maintaining Air Quality — Paper 1 Answers</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#eef2ff;color:#111827;font-size:14px;line-height:1.6}
+.top-bar{background:#1d4ed8;padding:20px 28px 16px}
+.top-bar .label{font-size:11px;color:#93c5fd;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.top-bar h1{font-size:20px;font-weight:700;color:#fff;margin-bottom:2px}
+.top-bar .sub{font-size:12.5px;color:#bfdbfe}
+.back-link{display:inline-block;font-size:12px;color:#93c5fd;text-decoration:none;margin-bottom:10px;opacity:.85}
+.back-link:hover{opacity:1;text-decoration:underline}
+.score-banner{background:#fff;border-bottom:1px solid #dbeafe;padding:10px 24px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:10;flex-wrap:wrap}
+.score-banner .s-label{font-size:12px;color:#6b7280}
+.score-pill.grand{background:#1d4ed8;color:#fff;border-color:#1d4ed8;border:1px solid;border-radius:20px;padding:4px 14px;font-size:12.5px;font-weight:600}
+.progress-bar-wrap{flex:1;min-width:120px;max-width:260px;height:6px;background:#e0e7ff;border-radius:99px;overflow:hidden}
+.progress-bar-fill{height:100%;background:#1d4ed8;border-radius:99px;transition:width .3s}
+.section-bar{padding:20px 24px 8px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6b7280}
+.q-card{background:#fff;margin:0 20px 16px;border-radius:10px;border:1px solid #dbeafe;overflow:hidden}
+.q-head{border-bottom:2px solid #dbeafe;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.q-head h2{font-size:14px;font-weight:700;color:#1d4ed8}
+.year-tag{font-size:11.5px;color:#6b7280;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:5px;padding:2px 9px;white-space:nowrap}
+.q-body{padding:16px 18px}
+.concept-chip{display:inline-flex;align-items:center;gap:5px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:5px;padding:3px 10px;font-size:11.5px;color:#1e40af;margin-bottom:14px}
+.concept-chip svg{width:12px;height:12px;flex-shrink:0}
+.instruction{font-size:12.5px;color:#9ca3af;margin-bottom:12px}
+.options-row{display:flex;gap:10px;flex-wrap:wrap}
+.opt-btn{width:56px;height:56px;border-radius:8px;border:2px solid #c7d2fe;background:#f5f8ff;color:#1d4ed8;font-size:17px;font-weight:700;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative}
+.opt-btn:hover:not([disabled]){background:#dbeafe;border-color:#2563eb;transform:translateY(-1px)}
+.opt-btn[disabled]{cursor:default;transform:none}
+.opt-btn.selected-wrong{background:#fee2e2;border-color:#ef4444;color:#dc2626}
+.opt-btn.correct{background:#dcfce7;border-color:#22c55e;color:#16a34a}
+.opt-btn.correct::after{content:'✓';position:absolute;bottom:2px;right:5px;font-size:10px;color:#16a34a}
+.explanation{margin-top:14px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:12px 14px;display:none}
+.explanation.show{display:block}
+.explanation .ex-head{font-size:11px;font-weight:700;color:#15803d;letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px}
+.explanation.wrong-ex{background:#fef2f2;border-color:#fecaca}
+.explanation.wrong-ex .ex-head{color:#dc2626}
+.explanation .ex-text{font-size:13px;color:#374151;line-height:1.65}
+.explanation .correct-ans-note{margin-top:6px;font-size:12px;color:#16a34a;font-weight:600}
+.result-badge{display:none;align-items:center;font-size:12px;font-weight:600;padding:2px 10px;border-radius:20px}
+.result-badge.correct-badge{background:#dcfce7;color:#15803d;display:inline-flex}
+.result-badge.wrong-badge{background:#fee2e2;color:#dc2626;display:inline-flex}
+.takeaway-card{background:#1d4ed8;margin:0 20px 20px;border-radius:10px;padding:16px 20px;color:#fff}
+.takeaway-card .tk-label{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#93c5fd;margin-bottom:6px}
+.takeaway-card p{font-size:13px;line-height:1.6;color:#dbeafe}
+footer{text-align:center;padding:12px;font-size:11px;color:#9ca3af;margin-bottom:8px}
+@media(max-width:480px){.q-card{margin:0 12px 14px}.opt-btn{width:50px;height:50px;font-size:15px}.takeaway-card{margin:0 12px 16px}}
+
+.auth-overlay{position:fixed;inset:0;background:rgba(17,24,39,.92);z-index:9999;display:flex;align-items:center;justify-content:center}
+.auth-box{background:#fff;border-radius:16px;padding:36px 32px;max-width:360px;width:90%;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.auth-box .a-sub{font-size:11px;color:#9ca3af;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.auth-box h2{font-size:17px;font-weight:700;color:#111827;margin-bottom:8px;line-height:1.35}
+.auth-box p{font-size:13px;color:#6b7280;margin-bottom:22px;line-height:1.5}
+.auth-box input{width:100%;padding:11px 14px;border:1px solid #c7d2fe;border-radius:8px;font-size:15px;outline:none;margin-bottom:12px;text-align:center;letter-spacing:3px;color:#111827}
+.auth-box input:focus{border-color:#2563eb;box-shadow:0 0 0 3px #dbeafe}
+.auth-box button{width:100%;padding:11px;background:#1d4ed8;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .15s}
+.auth-box button:hover{background:#1e40af}
+.auth-err{color:#dc2626;font-size:12px;margin-top:10px;min-height:16px}
+</style>
+</head>
+<body>
+<div class="auth-overlay" id="authOverlay">
+  <div class="auth-box">
+    <div class="a-sub">GCE O Level 5086 &middot; Science (Chemistry)</div>
+    <h2>Topic 12 &nbsp;&middot;&nbsp; Maintaining Air Quality</h2>
+    <p>Enter the class password provided by your teacher to access the model answers.</p>
+    <input type="password" id="authInput" placeholder="Class password" onkeydown="if(event.key==='Enter')checkAuth()">
+    <button onclick="checkAuth()">Unlock Answers &rarr;</button>
+    <div class="auth-err" id="authErr"></div>
+  </div>
+</div>
+<div class="top-bar">
+  <a href="index.html" class="back-link">← All Topics</a>
+  <div class="label">GCE O Level 5086 Science (Chemistry)</div>
+  <h1>Topic 12 &nbsp;·&nbsp; Maintaining Air Quality</h1>
+  <div class="sub">Paper 1 — Multiple Choice &nbsp;·&nbsp; Answer Checker</div>
+</div>
+
+<div class="score-banner">
+  <span class="s-label">Score</span>
+  <span class="score-pill grand" id="scoreDisplay">0 / 12</span>
+  <span class="s-label" id="answeredDisplay">0 answered</span>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar" style="width:0%"></div></div>
+</div>
+
+<div class="section-bar">Questions — Maintaining Air Quality (12 questions)</div>
+
+<div class="q-card" id="card-1">
+  <div class="q-head"><h2>Question 1</h2><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span class="year-tag">2016 P1 Q16</span><span class="result-badge" id="badge-1"></span></div></div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>Argon is the most abundant noble gas in air (~1% of dry air)</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(1,'A','A')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(1,'B','A')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(1,'C','A')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(1,'D','A')">D</button>
+    </div>
+    <div class="explanation" id="exp-1"><div class="ex-head">💡 Explanation</div><div class="ex-text">Helium, krypton and xenon are all present in only very tiny amounts. Argon makes up the vast majority of the noble gas fraction in dry air.</div></div>
+  </div>
+</div>
+
+<div class="q-card" id="card-2">
+  <div class="q-head"><h2>Question 2</h2><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span class="year-tag">2016 P1 Q17</span><span class="result-badge" id="badge-2"></span></div></div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>Incomplete combustion of fuels → carbon monoxide (toxic)</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(2,'A','B')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(2,'B','B')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(2,'C','B')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(2,'D','B')">D</button>
+    </div>
+    <div class="explanation" id="exp-2"><div class="ex-head">💡 Explanation</div><div class="ex-text">CO₂ and H₂O are products of complete combustion. Oxides of nitrogen form at high temperature in engines from N₂ and O₂ — not from incomplete combustion. Carbon monoxide is the toxic gas produced when petrol burns with insufficient oxygen (incomplete combustion).</div></div>
+  </div>
+</div>
+
+<div class="q-card" id="card-3">
+  <div class="q-head"><h2>Question 3</h2><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span class="year-tag">2017 P1 Q15</span><span class="result-badge" id="badge-3"></span></div></div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>Dry air: ~78% N₂, ~21% O₂, ~1% noble gases + trace CO₂</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(3,'A','D')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(3,'B','D')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(3,'C','D')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(3,'D','D')">D</button>
+    </div>
+    <div class="explanation" id="exp-3"><div class="ex-head">💡 Explanation</div><div class="ex-text">Nitrogen is the largest component of dry air (~78%). Oxygen is about one-fifth (~21%). The remaining small percentage (~1%) is mainly noble gases with a trace amount of carbon dioxide.</div></div>
+  </div>
+</div>
+
+<div class="q-card" id="card-4">
+  <div class="q-head"><h2>Question 4</h2><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span class="year-tag">2017 P1 Q16</span><span class="result-badge" id="badge-4"></span></div></div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>High temperatures (lightning & engines) cause N₂ + O₂ → oxides of nitrogen</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(4,'A','B')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(4,'B','B')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(4,'C','B')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(4,'D','B')">D</button>
+    </div>
+    <div class="explanation" id="exp-4"><div class="ex-head">💡 Explanation</div><div class="ex-text">Both lightning and internal combustion engines produce extremely high temperatures. This causes nitrogen and oxygen in the air to react, forming oxides of nitrogen (including NO and NO₂). Both sources produce the same pollutant by the same mechanism.</div></div>
+  </div>
+</div>
+
+<div class="q-card" id="card-5">
+  <div class="q-head"><h2>Question 5</h2><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span class="year-tag">2018 P1 Q15</span><span class="result-badge" id="badge-5"></span></div></div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>Dry air: ~78% N₂, ~21% O₂, ~1% noble gases + trace CO₂</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(5,'A','C')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(5,'B','C')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(5,'C','C')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(5,'D','C')">D</button>
+    </div>
+    <div class="explanation" id="exp-5"><div class="ex-head">💡 Explanation</div><div class="ex-text">Option A is wrong: CO₂ is not 1% — it is only ~0.04%. Option B leaves out CO₂ entirely. Option D swaps the percentages of nitrogen and oxygen. The correct composition is ~78% N₂, ~21% O₂, and the remaining ~1% is noble gases plus a trace of CO₂.</div></div>
+  </div>
+</div>
+
+<div class="q-card" id="card-6">
+  <div class="q-head"><h2>Question 6</h2><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span class="year-tag">2018 P1 Q16</span><span class="result-badge" id="badge-6"></span></div></div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>NO₂ and SO₂ form acid rain → erodes buildings; CO and CH₄ do not</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(6,'A','D')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(6,'B','D')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(6,'C','D')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(6,'D','D')">D</button>
+    </div>
+    <div class="explanation" id="exp-6"><div class="ex-head">💡 Explanation</div><div class="ex-text">Carbon monoxide is toxic but does not cause acid rain or erosion of buildings. Methane is a greenhouse gas. Nitrogen dioxide and sulfur dioxide dissolve in rainwater to form acidic rain, which chemically erodes limestone and marble buildings.</div></div>
+  </div>
+</div>
+
+<div class="q-card" id="card-7">
+  <div class="q-head"><h2>Question 7</h2><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span class="year-tag">2019 P1 Q17</span><span class="result-badge" id="badge-7"></span></div></div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>Argon is the most abundant noble gas in air</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(7,'A','A')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(7,'B','A')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(7,'C','A')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(7,'D','A')">D</button>
+    </div>
+    <div class="explanation" id="exp-7"><div class="ex-head">💡 Explanation</div><div class="ex-text">Helium, krypton and neon are present in smaller amounts than argon. Argon (~0.93%) makes up almost all of the noble gas fraction in dry air.</div></div>
+  </div>
+</div>
+
+<div class="q-card" id="card-8">
+  <div class="q-head"><h2>Question 8</h2><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span class="year-tag">2020 P1 Q17</span><span class="result-badge" id="badge-8"></span></div></div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>Heated copper removes O₂ from air; ~21% O₂ is absorbed, leaving ~79% behind</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(8,'A','D')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(8,'B','D')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(8,'C','D')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(8,'D','D')">D</button>
+    </div>
+    <div class="explanation" id="exp-8"><div class="ex-head">💡 Explanation</div><div class="ex-text">Heated copper reacts with oxygen (2Cu + O₂ → 2CuO), removing it from the air. 21% of 50 cm³ = ~10.5 cm³ of O₂ removed. Final volume ≈ 50 − 10.5 = 39.5 cm³, close to 40 cm³. The graph should show volume decreasing from 50 cm³ and levelling off at ~40 cm³.</div></div>
+  </div>
+</div>
+
+<div class="q-card" id="card-9">
+  <div class="q-head"><h2>Question 9</h2><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span class="year-tag">2021 P1 Q17</span><span class="result-badge" id="badge-9"></span></div></div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>After O₂ removed, ~79% of original volume remains (mainly N₂ and noble gases)</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(9,'A','C')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(9,'B','C')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(9,'C','C')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(9,'D','C')">D</button>
+    </div>
+    <div class="explanation" id="exp-9"><div class="ex-head">💡 Explanation</div><div class="ex-text">79% of 80 cm³ = 63.2 cm³ ≈ 63 cm³. After all the oxygen is removed by heated copper, the remaining gas is mainly nitrogen and noble gases.</div></div>
+  </div>
+</div>
+
+<div class="q-card" id="card-10">
+  <div class="q-head"><h2>Question 10</h2><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span class="year-tag">2022 P1 Q16</span><span class="result-badge" id="badge-10"></span></div></div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>NO₂ and SO₂ → acid rain → damages buildings; CO → toxic to humans; CH₄ → greenhouse gas</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(10,'A','A')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(10,'B','A')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(10,'C','A')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(10,'D','A')">D</button>
+    </div>
+    <div class="explanation" id="exp-10"><div class="ex-head">💡 Explanation</div><div class="ex-text">Carbon monoxide is harmful to health (binds to haemoglobin) but does not cause acid rain. Methane contributes to global warming but does not damage buildings by acid rain. Nitrogen dioxide and sulfur dioxide dissolve in rainwater to form acid rain, which erodes limestone and concrete buildings.</div></div>
+  </div>
+</div>
+
+<div class="q-card" id="card-11">
+  <div class="q-head"><h2>Question 11</h2><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span class="year-tag">2023 P1 Q20</span><span class="result-badge" id="badge-11"></span></div></div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>Argon is the most abundant noble gas in clean air</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(11,'A','A')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(11,'B','A')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(11,'C','A')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(11,'D','A')">D</button>
+    </div>
+    <div class="explanation" id="exp-11"><div class="ex-head">💡 Explanation</div><div class="ex-text">Helium, krypton and xenon are all present in much smaller amounts than argon. Argon (~0.93% of dry air) is by far the most abundant noble gas in clean air.</div></div>
+  </div>
+</div>
+
+<div class="q-card" id="card-12">
+  <div class="q-head"><h2>Question 12</h2><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span class="year-tag">2024 P1 Q20</span><span class="result-badge" id="badge-12"></span></div></div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>Incomplete combustion of fossil fuels → carbon monoxide (not CO₂)</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(12,'A','B')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(12,'B','B')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(12,'C','B')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(12,'D','B')">D</button>
+    </div>
+    <div class="explanation" id="exp-12"><div class="ex-head">💡 Explanation</div><div class="ex-text">Carbon dioxide is produced in complete combustion. Nitrogen dioxide forms when N₂ and O₂ react at high temperatures (not from incomplete combustion). Sulfur dioxide forms from sulfur impurities in fuels — not from incomplete combustion of carbon. Carbon monoxide is the product of incomplete combustion when there is insufficient oxygen.</div></div>
+  </div>
+</div>
+
+<div class="takeaway-card">
+  <div class="tk-label">⚡ One-line Takeaway</div>
+  <p>Dry air is ~<strong>78% N₂, 21% O₂, 1% other gases</strong>; <strong>incomplete combustion → CO</strong> (toxic); <strong>NO₂ and SO₂ → acid rain</strong> (erodes buildings); argon is the most abundant noble gas.</p>
+</div>
+
+<footer>GCE O Level 5086 Science (Chemistry) &nbsp;&middot;&nbsp; Topic 12 Maintaining Air Quality &nbsp;&middot;&nbsp; Paper 1 &nbsp;&middot;&nbsp; Questions &copy; UCLES &amp; MOE &nbsp;&middot;&nbsp; Last updated 4 May 2026</footer>
+
+<script>
+(function(){
+  var TOTAL=12,score=0,answered=0,results={};
+  window.selectAnswer=function(qNum,chosen,correct){
+    if(results.hasOwnProperty(qNum))return;
+    answered++;var isCorrect=(chosen===correct);results[qNum]=isCorrect;if(isCorrect)score++;
+    var card=document.getElementById('card-'+qNum);var btns=card.querySelectorAll('.opt-btn');var letters=['A','B','C','D'];
+    btns.forEach(function(btn,i){btn.disabled=true;var ltr=letters[i];if(ltr===correct){btn.classList.add('correct');}else if(ltr===chosen&&!isCorrect){btn.classList.add('selected-wrong');}});
+    var exp=document.getElementById('exp-'+qNum);exp.classList.add('show');
+    if(!isCorrect){exp.classList.add('wrong-ex');exp.querySelector('.ex-head').textContent='✗ Incorrect — here\'s why:';var note=document.createElement('div');note.className='correct-ans-note';note.textContent='✓ Correct answer: '+correct;exp.appendChild(note);}
+    else{exp.querySelector('.ex-head').textContent='✓ Correct! Here\'s why:';}
+    var badge=document.getElementById('badge-'+qNum);badge.textContent=isCorrect?'✓ Correct':'✗ Wrong';badge.className='result-badge '+(isCorrect?'correct-badge':'wrong-badge');
+    document.getElementById('scoreDisplay').textContent=score+' / '+TOTAL;
+    document.getElementById('answeredDisplay').textContent=answered+' answered';
+    document.getElementById('progressBar').style.width=(answered/TOTAL*100)+'%';
+  };
+})();
+</script>
+
+<script>
+(function(){
+  var PWD='airqual12', KEY='auth_t12';
+  if(sessionStorage.getItem(KEY)==='1'){document.getElementById('authOverlay').style.display='none';}
+  window.checkAuth=function(){
+    if(document.getElementById('authInput').value===PWD){
+      sessionStorage.setItem(KEY,'1');document.getElementById('authOverlay').style.display='none';
+    }else{
+      document.getElementById('authErr').textContent='Incorrect password — please try again.';
+      document.getElementById('authInput').value='';document.getElementById('authInput').focus();
+    }
+  };
+})();
+</script>
+</body>
+</html>

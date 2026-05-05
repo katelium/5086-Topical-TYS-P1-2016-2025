@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 9 Chemical Energetics — Paper 1 Answers</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#eef2ff;color:#111827;font-size:14px;line-height:1.6}
+.top-bar{background:#1d4ed8;padding:20px 28px 16px}
+.top-bar .label{font-size:11px;color:#93c5fd;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.top-bar h1{font-size:20px;font-weight:700;color:#fff;margin-bottom:2px}
+.top-bar .sub{font-size:12.5px;color:#bfdbfe}
+.back-link{display:inline-block;font-size:12px;color:#93c5fd;text-decoration:none;margin-bottom:10px;opacity:.85}
+.back-link:hover{opacity:1;text-decoration:underline}
+.score-banner{background:#fff;border-bottom:1px solid #dbeafe;padding:10px 24px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:10;flex-wrap:wrap}
+.score-banner .s-label{font-size:12px;color:#6b7280}
+.score-pill{background:#eff6ff;border:1px solid #bfdbfe;border-radius:20px;padding:4px 14px;font-size:12.5px;color:#1d4ed8;font-weight:600}
+.score-pill.grand{background:#1d4ed8;color:#fff;border-color:#1d4ed8}
+.progress-bar-wrap{flex:1;min-width:120px;max-width:260px;height:6px;background:#e0e7ff;border-radius:99px;overflow:hidden}
+.progress-bar-fill{height:100%;background:#1d4ed8;border-radius:99px;transition:width .3s}
+.section-bar{padding:20px 24px 8px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6b7280}
+.q-card{background:#fff;margin:0 20px 16px;border-radius:10px;border:1px solid #dbeafe;overflow:hidden}
+.q-head{border-bottom:2px solid #dbeafe;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.q-head h2{font-size:14px;font-weight:700;color:#1d4ed8}
+.year-tag{font-size:11.5px;color:#6b7280;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:5px;padding:2px 9px;white-space:nowrap}
+.q-body{padding:16px 18px}
+.concept-chip{display:inline-flex;align-items:center;gap:5px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:5px;padding:3px 10px;font-size:11.5px;color:#1e40af;margin-bottom:14px}
+.concept-chip svg{width:12px;height:12px;flex-shrink:0}
+.instruction{font-size:12.5px;color:#9ca3af;margin-bottom:12px}
+.options-row{display:flex;gap:10px;flex-wrap:wrap}
+.opt-btn{width:56px;height:56px;border-radius:8px;border:2px solid #c7d2fe;background:#f5f8ff;color:#1d4ed8;font-size:17px;font-weight:700;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative}
+.opt-btn:hover:not([disabled]){background:#dbeafe;border-color:#2563eb;transform:translateY(-1px)}
+.opt-btn[disabled]{cursor:default;transform:none}
+.opt-btn.selected-wrong{background:#fee2e2;border-color:#ef4444;color:#dc2626}
+.opt-btn.correct{background:#dcfce7;border-color:#22c55e;color:#16a34a}
+.opt-btn.correct::after{content:'✓';position:absolute;bottom:2px;right:5px;font-size:10px;color:#16a34a}
+.explanation{margin-top:14px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:12px 14px;display:none}
+.explanation.show{display:block}
+.explanation .ex-head{font-size:11px;font-weight:700;color:#15803d;letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px}
+.explanation.wrong-ex{background:#fef2f2;border-color:#fecaca}
+.explanation.wrong-ex .ex-head{color:#dc2626}
+.explanation .ex-text{font-size:13px;color:#374151;line-height:1.65}
+.explanation .correct-ans-note{margin-top:6px;font-size:12px;color:#16a34a;font-weight:600}
+.result-badge{display:none;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:2px 10px;border-radius:20px}
+.result-badge.correct-badge{background:#dcfce7;color:#15803d;display:inline-flex}
+.result-badge.wrong-badge{background:#fee2e2;color:#dc2626;display:inline-flex}
+.takeaway-card{background:#1d4ed8;margin:0 20px 20px;border-radius:10px;padding:16px 20px;color:#fff}
+.takeaway-card .tk-label{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#93c5fd;margin-bottom:6px}
+.takeaway-card p{font-size:13px;line-height:1.6;color:#dbeafe}
+footer{text-align:center;padding:12px;font-size:11px;color:#9ca3af;margin-bottom:8px}
+@media(max-width:480px){.q-card{margin:0 12px 14px}.opt-btn{width:50px;height:50px;font-size:15px}.takeaway-card{margin:0 12px 16px}}
+
+.auth-overlay{position:fixed;inset:0;background:rgba(17,24,39,.92);z-index:9999;display:flex;align-items:center;justify-content:center}
+.auth-box{background:#fff;border-radius:16px;padding:36px 32px;max-width:360px;width:90%;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.auth-box .a-sub{font-size:11px;color:#9ca3af;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.auth-box h2{font-size:17px;font-weight:700;color:#111827;margin-bottom:8px;line-height:1.35}
+.auth-box p{font-size:13px;color:#6b7280;margin-bottom:22px;line-height:1.5}
+.auth-box input{width:100%;padding:11px 14px;border:1px solid #c7d2fe;border-radius:8px;font-size:15px;outline:none;margin-bottom:12px;text-align:center;letter-spacing:3px;color:#111827}
+.auth-box input:focus{border-color:#2563eb;box-shadow:0 0 0 3px #dbeafe}
+.auth-box button{width:100%;padding:11px;background:#1d4ed8;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .15s}
+.auth-box button:hover{background:#1e40af}
+.auth-err{color:#dc2626;font-size:12px;margin-top:10px;min-height:16px}
+</style>
+</head>
+<body>
+<div class="auth-overlay" id="authOverlay">
+  <div class="auth-box">
+    <div class="a-sub">GCE O Level 5086 &middot; Science (Chemistry)</div>
+    <h2>Topic 9 &nbsp;&middot;&nbsp; Chemical Energetics</h2>
+    <p>Enter the class password provided by your teacher to access the model answers.</p>
+    <input type="password" id="authInput" placeholder="Class password" onkeydown="if(event.key==='Enter')checkAuth()">
+    <button onclick="checkAuth()">Unlock Answers &rarr;</button>
+    <div class="auth-err" id="authErr"></div>
+  </div>
+</div>
+<div class="top-bar">
+  <a href="index.html" class="back-link">← All Topics</a>
+  <div class="label">GCE O Level 5086 Science (Chemistry)</div>
+  <h1>Topic 9 &nbsp;·&nbsp; Chemical Energetics</h1>
+  <div class="sub">Paper 1 — Multiple Choice &nbsp;·&nbsp; Answer Checker</div>
+</div>
+
+<div class="score-banner">
+  <span class="s-label">Score</span>
+  <span class="score-pill grand" id="scoreDisplay">0 / 7</span>
+  <span class="s-label" id="answeredDisplay">0 answered</span>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar" style="width:0%"></div></div>
+</div>
+
+<div class="section-bar">Questions — Chemical Energetics (7 questions)</div>
+
+<div class="q-card" id="card-1">
+  <div class="q-head">
+    <h2>Question 1</h2>
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <span class="year-tag">2016 P1 Q7 · 2019 P1 Q8 · 2022 P1 Q8</span>
+      <span class="result-badge" id="badge-1"></span>
+    </div>
+  </div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>A fall in temperature means the reaction is endothermic</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(1,'A','A')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(1,'B','A')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(1,'C','A')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(1,'D','A')">D</button>
+    </div>
+    <div class="explanation" id="exp-1">
+      <div class="ex-head">💡 Explanation</div>
+      <div class="ex-text">Since the temperature decreases, heat is absorbed from the surroundings — this is endothermic. The reacting chemicals gain energy. Options C and D are wrong because they say exothermic. B is wrong because endothermic reactions do not mean the reacting chemicals lose energy.</div>
+    </div>
+  </div>
+</div>
+
+<div class="q-card" id="card-2">
+  <div class="q-head">
+    <h2>Question 2</h2>
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <span class="year-tag">2017 P1 Q7</span>
+      <span class="result-badge" id="badge-2"></span>
+    </div>
+  </div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>A rise in temperature means the reaction is exothermic</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(2,'A','C')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(2,'B','C')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(2,'C','C')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(2,'D','C')">D</button>
+    </div>
+    <div class="explanation" id="exp-2">
+      <div class="ex-head">💡 Explanation</div>
+      <div class="ex-text">The mixture becomes warmer, so heat is released to the surroundings. Therefore, the reaction is exothermic and energy is given out to the surroundings.</div>
+    </div>
+  </div>
+</div>
+
+<div class="q-card" id="card-3">
+  <div class="q-head">
+    <h2>Question 3</h2>
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <span class="year-tag">2018 P1 Q7</span>
+      <span class="result-badge" id="badge-3"></span>
+    </div>
+  </div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>Positive ΔT = exothermic; negative ΔT = endothermic</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(3,'A','B')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(3,'B','B')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(3,'C','B')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(3,'D','B')">D</button>
+    </div>
+    <div class="explanation" id="exp-3">
+      <div class="ex-head">💡 Explanation</div>
+      <div class="ex-text">W (+10 °C) and Z (+15 °C) increase in temperature → exothermic. X (−8 °C) and Y (−5 °C) decrease in temperature → endothermic. The correct row states X is endothermic and Z is exothermic.</div>
+    </div>
+  </div>
+</div>
+
+<div class="q-card" id="card-4">
+  <div class="q-head">
+    <h2>Question 4</h2>
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <span class="year-tag">2020 P1 Q9</span>
+      <span class="result-badge" id="badge-4"></span>
+    </div>
+  </div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>Endothermic processes absorb heat from surroundings → temperature falls</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(4,'A','D')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(4,'B','D')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(4,'C','D')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(4,'D','D')">D</button>
+    </div>
+    <div class="explanation" id="exp-4">
+      <div class="ex-head">💡 Explanation</div>
+      <div class="ex-text">Since dissolving ammonium nitrate is endothermic, heat flows from the surroundings into the process. The surroundings lose heat, so the temperature of the solution falls.</div>
+    </div>
+  </div>
+</div>
+
+<div class="q-card" id="card-5">
+  <div class="q-head">
+    <h2>Question 5</h2>
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <span class="year-tag">2021 P1 Q8</span>
+      <span class="result-badge" id="badge-5"></span>
+    </div>
+  </div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>Neutralisation between acid and alkali is exothermic</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(5,'A','C')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(5,'B','C')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(5,'C','C')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(5,'D','C')">D</button>
+    </div>
+    <div class="explanation" id="exp-5">
+      <div class="ex-head">💡 Explanation</div>
+      <div class="ex-text">The temperature increases, so heat is released to the surroundings. Therefore, the neutralisation reaction is exothermic and energy is given out to the surroundings.</div>
+    </div>
+  </div>
+</div>
+
+<div class="q-card" id="card-6">
+  <div class="q-head">
+    <h2>Question 6</h2>
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <span class="year-tag">2023 P1 Q8</span>
+      <span class="result-badge" id="badge-6"></span>
+    </div>
+  </div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>In endothermic changes, particles gain energy from surroundings</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(6,'A','C')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(6,'B','C')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(6,'C','C')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(6,'D','C')">D</button>
+    </div>
+    <div class="explanation" id="exp-6">
+      <div class="ex-head">💡 Explanation</div>
+      <div class="ex-text">Sulfuric acid dissolving causes temperature increase → exothermic (A is wrong). Ammonium nitrate dissolving causes temperature decrease → endothermic (B is wrong). In an endothermic process, ammonium nitrate particles gain energy from the surroundings.</div>
+    </div>
+  </div>
+</div>
+
+<div class="q-card" id="card-7">
+  <div class="q-head">
+    <h2>Question 7</h2>
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <span class="year-tag">2024 P1 Q15</span>
+      <span class="result-badge" id="badge-7"></span>
+    </div>
+  </div>
+  <div class="q-body">
+    <div class="concept-chip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 6v4M8 5h.01"/></svg>Test-tube becomes warm = heat given out = exothermic</div>
+    <div class="instruction">Select the answer from your copy of the paper:</div>
+    <div class="options-row">
+      <button class="opt-btn" onclick="selectAnswer(7,'A','D')">A</button>
+      <button class="opt-btn" onclick="selectAnswer(7,'B','D')">B</button>
+      <button class="opt-btn" onclick="selectAnswer(7,'C','D')">C</button>
+      <button class="opt-btn" onclick="selectAnswer(7,'D','D')">D</button>
+    </div>
+    <div class="explanation" id="exp-7">
+      <div class="ex-head">💡 Explanation</div>
+      <div class="ex-text">The test-tube becomes warm → rise in temperature → heat is given out to the surroundings. Therefore, the reaction between zinc and copper(II) sulfate solution is exothermic.</div>
+    </div>
+  </div>
+</div>
+
+<div class="takeaway-card">
+  <div class="tk-label">⚡ One-line Takeaway</div>
+  <p><strong>Temperature rises = exothermic = heat given out</strong> to surroundings; <strong>temperature falls = endothermic = heat taken in</strong> from surroundings.</p>
+</div>
+
+<footer>GCE O Level 5086 Science (Chemistry) &nbsp;&middot;&nbsp; Topic 9 Chemical Energetics &nbsp;&middot;&nbsp; Paper 1 &nbsp;&middot;&nbsp; Questions &copy; UCLES &amp; MOE &nbsp;&middot;&nbsp; Last updated 4 May 2026</footer>
+
+<script>
+(function(){
+  var TOTAL=7,score=0,answered=0,results={};
+  window.selectAnswer=function(qNum,chosen,correct){
+    if(results.hasOwnProperty(qNum))return;
+    answered++;var isCorrect=(chosen===correct);results[qNum]=isCorrect;if(isCorrect)score++;
+    var card=document.getElementById('card-'+qNum);var btns=card.querySelectorAll('.opt-btn');var letters=['A','B','C','D'];
+    btns.forEach(function(btn,i){btn.disabled=true;var ltr=letters[i];if(ltr===correct){btn.classList.add('correct');}else if(ltr===chosen&&!isCorrect){btn.classList.add('selected-wrong');}});
+    var exp=document.getElementById('exp-'+qNum);exp.classList.add('show');
+    if(!isCorrect){exp.classList.add('wrong-ex');exp.querySelector('.ex-head').textContent='✗ Incorrect — here\'s why:';var note=document.createElement('div');note.className='correct-ans-note';note.textContent='✓ Correct answer: '+correct;exp.appendChild(note);}
+    else{exp.querySelector('.ex-head').textContent='✓ Correct! Here\'s why:';}
+    var badge=document.getElementById('badge-'+qNum);badge.textContent=isCorrect?'✓ Correct':'✗ Wrong';badge.className='result-badge '+(isCorrect?'correct-badge':'wrong-badge');
+    document.getElementById('scoreDisplay').textContent=score+' / '+TOTAL;
+    document.getElementById('answeredDisplay').textContent=answered+' answered';
+    document.getElementById('progressBar').style.width=(answered/TOTAL*100)+'%';
+  };
+})();
+</script>
+
+<script>
+(function(){
+  var PWD='energy09', KEY='auth_t9';
+  if(sessionStorage.getItem(KEY)==='1'){document.getElementById('authOverlay').style.display='none';}
+  window.checkAuth=function(){
+    if(document.getElementById('authInput').value===PWD){
+      sessionStorage.setItem(KEY,'1');document.getElementById('authOverlay').style.display='none';
+    }else{
+      document.getElementById('authErr').textContent='Incorrect password — please try again.';
+      document.getElementById('authInput').value='';document.getElementById('authInput').focus();
+    }
+  };
+})();
+</script>
+</body>
+</html>
